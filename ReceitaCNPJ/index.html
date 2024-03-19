@@ -1,0 +1,45 @@
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <link rel="stylesheet" href="css/index.css" media="screen" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Consulta CNPJ</title>
+    </head>
+    <body>
+
+        <label id="titulo" title="Numero do CNPJ">Digite o CNPJ:</label>
+    <input type="text" id="numero_cnpj" name="numero_cnpj">
+    <input type="button" id="pesquisar-btn" value="Pesquisar" onclick="chamarServicoReceitaWS()">
+
+
+    </body>
+    </html>
+
+        <script>
+    function chamarServicoReceitaWS() {
+        //const cnpj = = document.getElementById('numero_cep').value;
+        const cnpj = '14109763000180'; // CNPJ desejado
+    const corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/';
+
+    fetch(corsAnywhereUrl + 'https://www.receitaws.com.br/v1/cnpj/' + cnpj)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            console.log('Razão Social:', data.razao_social);
+        console.log('Nome Fantasia:', data.nome_fantasia);
+        console.log('Logradouro:', data.logradouro);
+        console.log('Bairro:', data.bairro);
+        console.log('Município:', data.municipio);
+        console.log('UF:', data.uf);
+        console.log('CEP:', data.cep);
+        console.log('Telefone:', data.telefone);
+            console.log('Situação:', data.situacao); // Dados do CNPJ
+        })
+        .catch(error => {
+            console.error('Erro ao fazer a requisição:', error);
+        });
+
+    }
+
+        </script>

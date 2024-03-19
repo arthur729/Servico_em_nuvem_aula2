@@ -1,0 +1,24 @@
+#pesquisar-btn {
+    background-color: #4CAF50; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    padding: 6px 15px; /* Espaçamento interno */
+    font-size: 10px; /* Tamanho da fonte */
+    border: none; /* Remover borda */
+    cursor: pointer; /* Altera o cursor ao passar por cima */
+    border-radius: 5px; /* Borda arredondada */
+}
+
+/* Estilo para quando o cursor passa por cima do botão */
+#pesquisar-btn:hover {
+    background-color: #45a049; /* Altera a cor de fundo */
+}
+
+/* Estilo para quando o botão é clicado */
+#pesquisar-btn:active {
+    background-color: #4ea7f0; /* Altera a cor de fundo */
+}
+
+#titulo
+ {
+font-size: 20px;
+}
